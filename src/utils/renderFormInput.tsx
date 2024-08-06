@@ -10,6 +10,8 @@ export type InputType<FormType extends FieldValues> = {
 		value: string | boolean | null;
 		title: string;
 	}>;
+	max?: number;
+	min?: number;
 	validate?: (watch: UseFormWatch<FormType>) => (val: string) => string | undefined;
 };
 
@@ -19,7 +21,7 @@ export const renderFormInput = <FormType extends FieldValues>(
 	formState: FormState<FormType>,
 	watch: UseFormWatch<FormType>,
 ) => {
-	const { label, required, type, validate, options } = input;
+	const { label, required, type, validate, options, max, min } = input;
 	const id = input.id as Path<FormType>;
 
 	if (type === 'select') {
@@ -52,6 +54,8 @@ export const renderFormInput = <FormType extends FieldValues>(
 				className={cn({ incorrect: formState.errors[id] })}
 				type={type}
 				id={id}
+				max={max}
+				min={min}
 				{...register(id, {
 					required: required,
 					validate: validate && validate(watch),

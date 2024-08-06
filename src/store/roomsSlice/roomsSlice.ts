@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { initialRoomsState } from "./constants"
-import { RoomsStateType } from "./types"
+import { RoomsStateType, RoomType } from "./types"
 
 export const roomsSlice = createSlice({
     name: 'counter',
@@ -8,8 +8,11 @@ export const roomsSlice = createSlice({
     reducers: {
         setRoomsState: (store, {payload}: {payload: RoomsStateType}) => {
           store = payload
+      },
+        addRoom: (store, {payload}: {payload: RoomType}) => {
+          store.push(payload)
       }
     }
   })
   
-  export const { setRoomsState } = roomsSlice.actions
+  export const { setRoomsState, addRoom } = roomsSlice.actions

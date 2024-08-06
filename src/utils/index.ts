@@ -1,3 +1,5 @@
 export {renderFormInput} from './renderFormInput'
 export type {InputType} from './renderFormInput'
 export {useTypedSelector} from './useTypedSelector'
+export {getRoomCanvasArray} from './getRoomCanvasArray'
+export {getRoomScheme} from './getRoomScheme'
