@@ -1,0 +1,1 @@
+export {SelectedRoomPage} from './SelectedRoomPage'

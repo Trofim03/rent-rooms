@@ -1,0 +1,1 @@
+export {ConfigureRoomPage} from './ConfigureRoomPage'

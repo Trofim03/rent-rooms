@@ -1,0 +1,101 @@
+@import 'src/variables.scss';
+
+.layout {
+	width: 100vw;
+	height: 100vh;
+
+	.content {
+		width: calc(100vw - 62px);
+		min-height: 100vh;
+		overflow-y: hidden;
+		padding: 15px;
+		margin-left: 62px;
+		box-sizing: border-box;
+
+		.headerContent {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 15px;
+		}
+	}
+}
+
+.navigation {
+	background: $main-color;
+	z-index: 5;
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	max-width: 62px;
+	height: 100vh;
+	transition: all 0.5s ease;
+	overflow: hidden;
+
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+
+	a,
+	button {
+		background: transparent;
+		border: none;
+		font-size: 16px;
+		cursor: pointer;
+		width: 100%;
+		display: grid;
+		align-items: center;
+		justify-content: flex-start;
+		grid-template-columns: 32px auto;
+		gap: 10px;
+		color: white;
+		text-decoration: none;
+		transition: all 0.25s ease;
+		padding: 15px;
+		border-right: 3px solid $main-color;
+
+		span.link-icon {
+			border-radius: 50%;
+			border: 1px solid white;
+			overflow: hidden;
+			width: 30px;
+			height: 30px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			svg {
+				fill: white;
+			}
+		}
+
+		span.link-title {
+			padding-left: 15px;
+			overflow: hidden;
+			text-wrap: nowrap;
+		}
+
+		&:hover,
+		&.active {
+			background: white;
+			color: $main-color;
+
+			span.link-icon {
+				border-color: $main-color;
+				svg {
+					fill: $main-color;
+				}
+			}
+		}
+	}
+
+	button {
+		margin-top: auto;
+	}
+
+	&:hover {
+		max-width: 300px;
+	}
+}

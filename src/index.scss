@@ -1,0 +1,54 @@
+@import './variables.scss';
+
+body {
+	color: $font-color;
+
+	font-family: 'Work Sans', sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+}
+
+body,
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+::selection {
+	background: $main-color;
+	color: white;
+}
+
+*::-webkit-scrollbar {
+	width: 5px;
+	right: 0;
+}
+
+*::-webkit-scrollbar-track {
+	background: white;
+	border-radius: 5px;
+}
+*::-webkit-scrollbar-thumb {
+	background-color: $main-color;
+}
+
+label {
+	width: fit-content;
+	margin-right: auto;
+	margin-left: 0;
+	margin-bottom: 5px;
+}
+
+input,
+select {
+	height: 30px;
+	border: 2px solid $main-color;
+	border-radius: 5px;
+	padding-left: 15px;
+
+	&.incorrect {
+		border-color: $error-color;
+	}
+}
