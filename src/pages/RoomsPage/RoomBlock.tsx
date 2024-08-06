@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 import { RoomType } from '../../store';
 import cn from 'classnames';
+import { getRoomScheme } from '../../utils';
 
 interface IRoomBlock {
 	room: RoomType;
@@ -18,13 +19,7 @@ export const RoomBlock: FC<IRoomBlock> = ({ room }) => {
 	const statusClassName = cn('status', { active: isActive });
 
 	const renderRoomScheme = () => {
-		// отрисовываем строку
-		return scheme.map((schemeRow, rowIndex) =>
-			// отрисовываем элемент строки
-			schemeRow.map((schemeEl, elIndex) => (
-				<div className={cn({ active: schemeEl })} key={`${id}-${rowIndex}-${elIndex}`} />
-			)),
-		);
+		return getRoomScheme(scheme, null, id);
 	};
 
 	return (

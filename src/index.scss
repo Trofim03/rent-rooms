@@ -43,7 +43,9 @@ label {
 
 input,
 select {
-	height: 30px;
+	&:not([type='checkbox']) {
+		height: 30px;
+	}
 	border: 2px solid $main-color;
 	border-radius: 5px;
 	padding-left: 15px;
@@ -51,4 +53,10 @@ select {
 	&.incorrect {
 		border-color: $error-color;
 	}
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }
